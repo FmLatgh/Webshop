@@ -1,0 +1,26 @@
+
+body {
+    background-color: lightblue;
+}
+
+.title {
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    border: 2px black solid;
+    display:inline-block;
+    background:#fff;
+
+}
+
+h2 {
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.container {
+    display:flex;
+    justify-content: space-evenly;
+}
