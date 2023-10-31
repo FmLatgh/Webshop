@@ -8,25 +8,164 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,100&family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,100&family=Dosis:wght@800&family=Montserrat&family=Mooli&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
+
     <title>Webshop</title>
 </head>
 <body>
+<div id="backdrop"></div>
+<div class="modal" id="mod1">
+    <div class="modalContent">
+        <div class="imgM1"><img src="img/locket.png"></div>
+        <div class="nameM1">Figurative Locket</div>
+        <div class="descriptionM1">Oh... It's a few of these I found somewhere... Don't worry too much about it.</div>
+        <div class="priceM1">3.99€ p.p. </div>
+        <div id="stockM1">15 on stock</div>
+        <button onclick="AddValue(1)" class="tooltip">
+            + <span class="tooltiptext">Adds one of this item.</span>
+        </button>
+        <button onclick="RemoveValue(1)" class="tooltip">
+            - <span class="tooltiptext">Removes one of this item.</span>
+        </button>
+
+    </div>
+</div>
+
+<div class="modal" id="mod2">
+    <div class="modalContent">
+        <div class="imgM2"><img src="img/idol.jpg"></div>
+        <div class="nameM2">Strange Idol</div>
+        <div class="descriptionM2">Made these myself! I like cutting stones.</div>
+        <div class="priceM2">€15.00 p.p. </div>
+        <div id="stockM2">12 on stock</div>
+        <button onclick="AddValue(2)" class="tooltip">
+            + <span class="tooltiptext">Adds one of this item.</span>
+        </button>
+        <button onclick="RemoveValue(2)" class="tooltip">
+            - <span class="tooltiptext">Removes one of this item.</span>
+        </button>
+
+    </div>
+</div>
+<div class="modal" id="mod3" data-product-modal="product3">
+    <div class="modalContent">
+        <div class="imgM3"><img src="img/GrassIcon.png" width="140px" height="140px"></div>
+        <div class="nameM3">Strange Sprout</div>
+        <div class="descriptionM3">Some sprouts I found in the group a while back...</div>
+        <div class="priceM3">1.99€ p.p. </div>
+        <div id="stockM3">72 on stock</div>
+        <button onclick="AddValue(3)" class="tooltip">
+            + <span class="tooltiptext">Adds one of this item.</span>
+        </button>
+        <button onclick="RemoveValue(3)" class="tooltip">
+            - <span class="tooltiptext">Removes one of this item.</span>
+        </button>
+
+        </div>
+    </div>
+</div>
 <h1 class="title">Welcome to the web-shop!</h1>
 <h2>In here: Only the finest quality products for a reasonable price!</h2>
 <h2>Check below!</h2>
+
+
+<div id="buying_area">
+    <div class="container" id="stock1" onclick="showModal(1)">
+        <div class="img"><img src="img/locket.png"></div>
+        <div class="name">Figurative Locket</div>
+        <div class="description">Oh... It's a few of these I found somewhere... Don't worry too much about it.</div>
+    </div>
+
+    <div class="container" id="stock2" onclick="showModal(2)">
+        <div class="img"><img src="img/idol.jpg"></div>
+        <div class="name">Strange Idol</div>
+        <div class="description">Made these myself! I like cutting stones.</div>
+    </div>
+
+    <div class="container" id="stock3" data-product-parent="product3" onclick="showModal(3)">
+        <div class="img"><img src="img/GrassIcon.png" width="140px" height="140px"></div>
+        <div class="name">Strange Sprout</div>
+        <div class="description">Some sprouts I found in the group a while back...</div>
+    </div>
+</div>
+<br>
+<div id="summary_area">
+<h1> Done shopping? You may check out here.</h1>
+    <div id="summary_sub_area">
+<h3>Total Price:</h3>
+        <br>
+    <h1 id="totalprice">0.00 €</h1>
+        <button onclick="clearItems()">Clear all items</button>
+    </div>
+</div>
+        <!-- The new reqs are different.
+            Voor een window: maak 2 divs, met id "backdrop" en "modal"
+
+            MODALS ZIJN LASTIG.
+
+            geef het een p in de "modal" div,
+            een button met click again, en dan heb je een beginnetje.
+
+            voor backdrop:
+            posotion fixed
+            backgroundcolor rgba 0 0 0 0.5
+            top 0
+            height 100vh
+            width 100vw
+            zindex 1
+            display none
+
+            voor modal:
+            pos fixed
+            padding 10px
+            left 40% (of ongeveer het midden)
+            top 100 px
+            backgroundcolor: Iets naar keuze
+            display none
+
+            maak button met ModalShower
+
+            jscript iets lastiger;
+            let showButton = document.getElementByID("modalShower");
+            let backdrop = document.getid("backdrop");
+            let modal = docu.getbyid("modal");
+
+            function voor hidemodal
+            backdrop en modal moeten BEIDE gehide worden
+
+            .style.display = "none"
+
+            voor show:
+            .style.display = "block"
+
+
+            Je kan gewoon de button.onClick() in jscript doen
+
+            voor sluit: backdrop.onclick = hideModal()
+
+            VOOR WEBSHOP REQ:
+
+            word nu image, met naam, wanneer je erop drukt, dan geeft die je de de naam, details, buttons en het kaartje zelf.
+             For tooltip:
+
+             <span id="tooltip">
+             css:
+             backgroundcolor
+             padding 5px?
+             pos absolute
+             ????
+
+             (Anyways it should ALL have a tooltip :pensive:
+
+
+             <!-->
+    </div>
+</div>
 <script src="js/script.js"></script>
-
-<div id="buying area">
-    <div class="container">
-        <div>glugu</div>
-        <div></div>
-        <div>
-</div>
-<div id="checkout">
-<div class="container">
-
-</div>
-</div>
 </body>
 </html>
